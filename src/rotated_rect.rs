@@ -1,6 +1,6 @@
-use egui::emath::{vec2, Pos2, Rect, Rot2};
-use egui::epaint::{Color32, CornerRadiusF32, PathShape, Stroke};
 use egui::Painter;
+use egui::emath::{Pos2, Rect, Rot2, vec2};
+use egui::epaint::{Color32, CornerRadiusF32, PathShape, Stroke};
 
 /// Draws a rectangle with rounded corners, rotated around an origin.
 pub(crate) fn draw_rotated_rect(

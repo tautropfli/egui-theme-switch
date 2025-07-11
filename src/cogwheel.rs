@@ -1,6 +1,6 @@
 use super::rotated_rect::draw_rotated_rect;
 use crate::Painter;
-use egui::emath::{vec2, Pos2, Rect, Rot2};
+use egui::emath::{Pos2, Rect, Rot2, vec2};
 use egui::epaint::{Color32, CornerRadiusF32};
 use std::f32::consts::TAU;
 

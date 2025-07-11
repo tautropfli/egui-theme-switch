@@ -10,7 +10,7 @@ mod auto_viewport_theme;
 
 #[cfg(not(target_arch = "wasm32"))]
 fn main() -> eframe::Result {
-    use egui::{vec2, ViewportBuilder};
+    use egui::{ViewportBuilder, vec2};
 
     let options = eframe::NativeOptions {
         centered: true,
