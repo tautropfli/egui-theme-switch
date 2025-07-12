@@ -56,11 +56,13 @@ jobs:
     name: Lint
     steps:
       - uses: actions/checkout@v4
+      - run: rustup update stable && rustup default stable
+      - run: rustup component add rustfmt
       - name: Check format
         run: cargo fmt -- --check
       - name: Run clippy
         run: cargo clippy --workspace --all-targets --all-features -- --deny warnings
-      - uses: EmbarkStudios/cargo-deny-action@v1
+      - uses: EmbarkStudios/cargo-deny-action@v2
 
   test:
     name: Test

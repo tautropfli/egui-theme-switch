@@ -1,7 +1,7 @@
 use super::rotated_rect::draw_rotated_rect;
-use egui::emath::{vec2, Pos2, Rect, Rot2, Vec2};
-use egui::epaint::{Color32, Stroke};
 use egui::Painter;
+use egui::emath::{Pos2, Rect, Rot2, Vec2, vec2};
+use egui::epaint::{Color32, Stroke};
 use std::f32::consts::TAU;
 
 pub(crate) fn sun(painter: &Painter, center: Pos2, radius: f32, color: Color32) {

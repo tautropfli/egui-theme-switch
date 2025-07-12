@@ -1,4 +1,4 @@
-use egui::emath::{vec2, Pos2, Vec2};
+use egui::emath::{Pos2, Vec2, vec2};
 use egui::epaint::{Color32, CubicBezierShape, Stroke};
 use std::f32::consts::FRAC_PI_2;
 use std::ops::RangeInclusive;
