@@ -831,7 +831,7 @@ dependencies = [
 
 [[package]]
 name = "egui-theme-switch"
-version = "0.4.0"
+version = "0.5.0"
 dependencies = [
  "egui",
 ]
