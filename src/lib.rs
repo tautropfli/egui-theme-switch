@@ -158,24 +158,30 @@ mod space_allocation {
         let (rect, response, measurements) = allocate_switch(ui, options);
         let id = response.id;
 
-        // Focusable elements always get an accessible node, so let's ensure that
-        // the parent is set correctly when the responses are created the first time.
-        ui.ctx().with_accessibility_parent(id, || {
-            let buttons = options
-                .iter()
-                .enumerate()
-                .scan(rect, |remaining, (n, option)| {
-                    Some(allocate_button(ui, remaining, id, &measurements, n, option))
-                })
-                .collect();
+        let ui_builder = egui::UiBuilder::new().accessibility_parent(id);
+        let ui = ui.new_child(ui_builder);
 
-            AllocatedSpace {
-                response,
-                rect,
-                buttons,
-                radius: measurements.radius,
-            }
-        })
+        let buttons = options
+            .iter()
+            .enumerate()
+            .scan(rect, |remaining, (n, option)| {
+                Some(allocate_button(
+                    &ui,
+                    remaining,
+                    id,
+                    &measurements,
+                    n,
+                    option,
+                ))
+            })
+            .collect();
+
+        AllocatedSpace {
+            response,
+            rect,
+            buttons,
+            radius: measurements.radius,
+        }
     }
 
     fn allocate_switch<T>(
