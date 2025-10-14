@@ -158,15 +158,21 @@ mod space_allocation {
         let (rect, response, measurements) = allocate_switch(ui, options);
         let id = response.id;
 
-        let ui_builder = egui::UiBuilder::new()
-            .accessibility_parent(id);
+        let ui_builder = egui::UiBuilder::new().accessibility_parent(id);
         let ui = ui.new_child(ui_builder);
 
         let buttons = options
             .iter()
             .enumerate()
             .scan(rect, |remaining, (n, option)| {
-                Some(allocate_button(&ui, remaining, id, &measurements, n, option))
+                Some(allocate_button(
+                    &ui,
+                    remaining,
+                    id,
+                    &measurements,
+                    n,
+                    option,
+                ))
             })
             .collect();
 
