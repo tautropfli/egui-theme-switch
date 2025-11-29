@@ -15,8 +15,8 @@ jobs:
     runs-on: fedora-latest
     steps:
       - uses: actions/checkout@v4
+      - run: sudo dnf install -y trunk rustup
       - run: rustup target add wasm32-unknown-unknown
-      - run: sudo dnf install -y trunk
       - run: trunk build --public-url 'https://tau.garden/egui-theme-switch'
         working-directory: demo
       - uses: https://codeberg.org/tautropfli/websites/upload-package@main
