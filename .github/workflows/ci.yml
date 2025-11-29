@@ -18,13 +18,6 @@ jobs:
       rust-version: ${{ steps.rust-version.outputs.rust-version }}
     steps:
       - uses: actions/checkout@v4
-      - name: Cache cargo stuff
-        uses: actions/cache@v4
-        with:
-          key: ${{ runner.os }}-cargo
-          path: |
-            ~/.cargo
-            ~/.rustup
       - name: Determine Rust Version
         id: rust-version
         run: |
@@ -41,13 +34,6 @@ jobs:
           ["${{needs.pre-build.outputs.rust-version}}", stable, nightly]
     steps:
       - uses: actions/checkout@v4
-      - name: Cache cargo stuff
-        uses: actions/cache@v4
-        with:
-          key: ${{ runner.os }}-cargo
-          path: |
-            ~/.cargo
-            ~/.rustup
       - name: Use Rust ${{matrix.rust-version}}
         if: matrix.rust-version != 'stable'
         run: rustup override set '${{matrix.rust-version}}'
@@ -59,13 +45,6 @@ jobs:
     runs-on: fedora-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Cache cargo stuff
-        uses: actions/cache@v4
-        with:
-          key: ${{ runner.os }}-cargo
-          path: |
-            ~/.cargo
-            ~/.rustup
       - run: rustup override set nightly
       - name: Build Docs
         run: cargo doc --workspace --all-features --no-deps
@@ -77,13 +56,6 @@ jobs:
     name: Lint
     steps:
       - uses: actions/checkout@v4
-      - name: Cache cargo stuff
-        uses: actions/cache@v4
-        with:
-          key: ${{ runner.os }}-cargo
-          path: |
-            ~/.cargo
-            ~/.rustup
       - run: rustup update stable && rustup default stable
       - run: rustup component add rustfmt
       - name: Check format
@@ -100,13 +72,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - name: Cache cargo stuff
-        uses: actions/cache@v4
-        with:
-          key: ${{ runner.os }}-cargo
-          path: |
-            ~/.cargo
-            ~/.rustup
       - name: Run tests on all targets
         run: cargo test --workspace --all-targets --all-features
       - name: Run doc tests
@@ -117,13 +82,6 @@ jobs:
     runs-on: fedora-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Cache cargo stuff
-        uses: actions/cache@v4
-        with:
-          key: ${{ runner.os }}-cargo
-          path: |
-            ~/.cargo
-            ~/.rustup
       - name: Package
         run: cargo package -p egui-theme-switch
       - name: Test Package
