@@ -23,7 +23,7 @@ jobs:
         if: format('refs/heads/{0}', forgejo.event.repository.default_branch) == forgejo.ref
         with:
           domain_name: tau.garden
-          subpath: egui-theme-switch
+          subpath: /egui-theme-switch
           package_push_token: ${{secrets.PACKAGE_PUSH_TOKEN}}
           directory: demo/dist
       - uses: https://codeberg.org/tautropfli/websites/deploy@main
