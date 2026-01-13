@@ -100,7 +100,7 @@ impl eframe::App for ThemeSwitchDemoApp {
                 ui.add(
                     Hyperlink::from_label_and_url(
                         "source code",
-                        "https://github.com/bash/egui-theme-switch",
+                        "https://codeberg.org/tautropfli/egui-theme-switch",
                     )
                     .open_in_new_tab(true), // TODO: find out why opening in the same tab just reloads the current page
                 );

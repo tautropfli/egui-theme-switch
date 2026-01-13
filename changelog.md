@@ -1,4 +1,7 @@
 # Changelog
+## 0.5.1
+* Update crate metadata.
+
 ## 0.5.0
 * Update to egui 0.33.0 by @lmaxyz.
 * Raise MSRV to 1.88.0 (this matches egui's MSRV).

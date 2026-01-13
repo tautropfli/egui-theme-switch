@@ -1,11 +1,11 @@
 [package]
 name = "egui-theme-switch"
-version = "0.5.0"
+version = "0.5.1"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"
 readme = "readme.md"
-repository = "https://github.com/bash/egui-theme-switch"
+repository = "https://codeberg.org/tautropfli/egui-theme-switch"
 description = "A pretty theme switch for your egui app"
 keywords = ["egui", "widget", "dark-light", "switch"]
 categories = ["gui"]
