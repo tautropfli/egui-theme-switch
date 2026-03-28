@@ -56,7 +56,6 @@ jobs:
     name: Lint
     steps:
       - uses: actions/checkout@v4
-      - run: rustup update stable && rustup default stable
       - run: rustup component add rustfmt
       - name: Check format
         run: cargo fmt -- --check
