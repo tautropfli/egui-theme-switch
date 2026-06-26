@@ -18,5 +18,5 @@ egui.workspace = true
 members = ["demo"]
 
 [workspace.dependencies]
-egui = { version = "0.34", default-features = false }
-eframe = { version = "0.34", features = ["persistence"] }
+egui = { version = "0.35", default-features = false }
+eframe = { version = "0.35", features = ["persistence"] }

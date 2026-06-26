@@ -83,7 +83,7 @@ impl ThemeSwitchDemoApp {
 
 impl eframe::App for ThemeSwitchDemoApp {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut Frame) {
-        CentralPanel::default().show_inside(ui, |ui| {
+        CentralPanel::default().show(ui, |ui| {
             ui.style_mut().spacing.interact_size *= 1.5;
 
             ui.vertical_centered(|ui| {
