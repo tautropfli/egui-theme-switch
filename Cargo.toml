@@ -9,7 +9,7 @@ repository = "https://codeberg.org/tautropfli/egui-theme-switch"
 description = "A pretty theme switch for your egui app"
 keywords = ["egui", "widget", "dark-light", "switch"]
 categories = ["gui"]
-exclude = [".github", "doc/*.py", "doc/*.png", "deny.toml"]
+exclude = [".forgejo", "demo", "doc/*.py", "doc/*.png", "deny.toml"]
 
 [dependencies]
 egui.workspace = true
