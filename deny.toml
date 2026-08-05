@@ -18,6 +18,9 @@ confidence-threshold = 1.0
 multiple-versions = "warn"
 wildcards = "deny"
 allow-wildcard-paths = true
+skip = [
+    { crate = "syn@2", reason = "syn 2 to 3 migration is still ongoing" },
+]
 
 [sources]
 unknown-registry = "deny"

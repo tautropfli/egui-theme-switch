@@ -6,8 +6,6 @@ use eframe::{CreationContext, Frame};
 use egui::{CentralPanel, Hyperlink};
 use egui_theme_switch::global_theme_switch;
 
-mod auto_viewport_theme;
-
 #[cfg(not(target_arch = "wasm32"))]
 fn main() -> eframe::Result {
     use egui::{ViewportBuilder, vec2};
@@ -75,8 +73,7 @@ fn main() {
 struct ThemeSwitchDemoApp;
 
 impl ThemeSwitchDemoApp {
-    fn new(cc: &CreationContext) -> Self {
-        auto_viewport_theme::register(&cc.egui_ctx);
+    fn new(_cc: &CreationContext) -> Self {
         Self
     }
 }

@@ -2,7 +2,7 @@
 name = "egui-theme-switch"
 version = "0.8.0"
 edition = "2024"
-rust-version = "1.92"
+rust-version = "1.95"
 license = "MIT OR Apache-2.0"
 readme = "readme.md"
 repository = "https://codeberg.org/tautropfli/egui-theme-switch"
@@ -18,5 +18,5 @@ egui.workspace = true
 members = ["demo"]
 
 [workspace.dependencies]
-egui = { version = "0.35", default-features = false }
-eframe = { version = "0.35", features = ["persistence"] }
+egui = { version = "0.36", default-features = false }
+eframe = { version = "0.36", features = ["persistence"] }
