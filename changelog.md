@@ -1,4 +1,7 @@
 # Changelog
+## 0.10.0
+* Updated to egui 0.37.0.
+
 ## 0.9.0
 * Update to egui 0.36.0.
 * Raise MSRV to 1.95 (this matches egui's MSRV).
