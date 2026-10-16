@@ -383,7 +383,7 @@ mod painting {
 
 mod accessibility {
     use super::*;
-    use egui::{WidgetInfo, WidgetType};
+    use egui::{Role, WidgetInfo};
 
     pub(super) fn attach_widget_info<T: PartialEq>(
         ui: &Ui,
@@ -409,10 +409,10 @@ mod accessibility {
     }
 
     fn radio_group_widget_info(ui: &Ui, label: &str) -> WidgetInfo {
-        WidgetInfo::labeled(WidgetType::RadioGroup, ui.is_enabled(), label)
+        WidgetInfo::labeled(Role::RadioGroup, ui.is_enabled(), label)
     }
 
     fn button_widget_info(ui: &Ui, label: &str, selected: bool) -> WidgetInfo {
-        WidgetInfo::selected(WidgetType::RadioButton, ui.is_enabled(), selected, label)
+        WidgetInfo::selected(Role::RadioButton, ui.is_enabled(), selected, label)
     }
 }
