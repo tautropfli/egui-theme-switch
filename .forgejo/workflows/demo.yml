@@ -14,7 +14,7 @@ jobs:
     name: Build Demo
     runs-on: fedora-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: sudo dnf install -y trunk
       - run: rustup target add wasm32-unknown-unknown
       - run: trunk build --public-url 'https://tau.garden/egui-theme-switch'

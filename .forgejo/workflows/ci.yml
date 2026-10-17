@@ -17,7 +17,7 @@ jobs:
     outputs:
       rust-version: ${{ steps.rust-version.outputs.rust-version }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Determine Rust Version
         id: rust-version
         run: |
@@ -33,7 +33,7 @@ jobs:
         rust-version:
           ["${{needs.pre-build.outputs.rust-version}}", stable, nightly]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Use Rust ${{matrix.rust-version}}
         if: matrix.rust-version != 'stable'
         run: rustup override set '${{matrix.rust-version}}'
@@ -44,7 +44,7 @@ jobs:
     name: Docs
     runs-on: fedora-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: rustup override set nightly
       - name: Build Docs
         run: cargo doc --workspace --all-features --no-deps
@@ -55,7 +55,7 @@ jobs:
     runs-on: fedora-latest
     name: Lint
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: rustup component add rustfmt
       - name: Check format
         run: cargo fmt -- --check
@@ -67,7 +67,7 @@ jobs:
     name: Test
     runs-on: fedora-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Run tests on all targets
         run: cargo test --workspace --all-targets --all-features
       - name: Run doc tests
@@ -77,7 +77,7 @@ jobs:
     name: Test Package
     runs-on: fedora-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Package
         run: cargo package -p egui-theme-switch
       - name: Test Package
